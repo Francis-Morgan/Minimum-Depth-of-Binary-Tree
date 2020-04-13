@@ -15,7 +15,7 @@ class Solution(object):
                 return self.minDepth(root.left) + 1
             else:
                 return self.minDepth(root.right) + 1
-        
-        return min(self.minDepth(root.left)+1,self.minDepth(root.right)+1)
+        else:
+            return min(self.minDepth(root.left)+1,self.minDepth(root.right)+1)
 
 
