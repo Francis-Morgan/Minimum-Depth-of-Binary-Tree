@@ -61,19 +61,21 @@ Ok, our tree's not empty, so let's check the following conditions.
  
 This condition is looking for a leaf. If our tree had no roots, its depth would be 1.
 
-We check the following 2 conditions. 
+We check the following conditions. 
 
-     if root.left==None:
-            return self.minDepth(root.right)+1
-        
-     if root.right==None:
-            return self.minDepth(root.left)+1
+     if root.left is None or root.right is None:
+            if root.left is None:
+                return self.minDepth(root.left) + 1
+            else:
+                return self.minDepth(root.right) + 1
+                
           
 As long as our tree does not meet these conditions, we will return to them later.
 
 That leaves the last one.
 
-    return min(self.minDepth(root.left)+1,self.minDepth(root.right)+1)
+    else:
+        return min(self.minDepth(root.left)+1,self.minDepth(root.right)+1)
    
 This is a recursive call to our function. We are looking for the leaves of the tree and their depth.
 
@@ -94,8 +96,20 @@ I tried to portray it:
 After checking the left sub-tree, we check the right one. It has a similar algorithm, but it has a node with only one descendant.
 
 The right sub-tree fits this condition:
+
+    if root.left is None or root.right is None:
+            if root.left is None:
+                return self.minDepth(root.left) + 1
+            else:
+                return self.minDepth(root.right) + 1
+  
+Then the function will get the root with knowledge of None, and return 0. **And most importantly, we don't need to check the right node.** It saves us time.
+
+It looks like this:
+
+![](https://github.com/chichikow/Minimum-Depth-of-Binary-Tree/blob/master/example1.png)
+
    
-    if root.left==None:
-        return self.minDepth(root.right)+1
+    
         
         
