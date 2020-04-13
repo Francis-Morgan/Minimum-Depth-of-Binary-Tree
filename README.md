@@ -92,3 +92,10 @@ I tried to portray it:
 ![](https://github.com/chichikow/Minimum-Depth-of-Binary-Tree/blob/master/example.png)
 
 After checking the left sub-tree, we check the right one. It has a similar algorithm, but it has a node with only one descendant.
+
+The right sub-tree fits this condition:
+   
+    if root.left==None:
+        return self.minDepth(root.right)+1
+        
+        
