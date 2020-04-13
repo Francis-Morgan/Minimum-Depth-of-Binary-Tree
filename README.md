@@ -109,6 +109,12 @@ It looks like this:
 
 ![](https://github.com/chichikow/Minimum-Depth-of-Binary-Tree/blob/master/example1.png)
 
+
+At the end the function compares the values and returns the smallest from them to the summand 1.
+
+## Test program
+
+![](https://github.com/chichikow/Minimum-Depth-of-Binary-Tree/blob/master/outputt.PNG)
    
     
         
