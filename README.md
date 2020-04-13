@@ -20,9 +20,9 @@ DFS explores all possible paths down to some leaf in the tree, goes back and exp
 
 We check every node, check if it is a leaf node. If yes, then return 1.
 
-If the node has no left sub-tree, then check  the right sub-tree.
+If the node has no left sub-tree, return 0 using recursion
 
-If the node has no right sub-tree, then check the left sub-tree.
+If the node has no right sub-tree, return 0 using recursion.
 
 If the node has both right and left descendants, we check both subtrees using the algorithm described above. 
 ##### For example
