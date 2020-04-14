@@ -12,8 +12,7 @@ The minimum depth is the number of nodes along the shortest path from the root n
 We have two options: depth-first search (**DFS**) and breadth-first search (**BFS**).
 
 In my program, I used depth-first search.
-#### Briefly about the differences.
-wait
+
 
 ## How does the program work?
 DFS explores all possible paths down to some leaf in the tree, goes back and explores another path (thus doing a search with a return). 
@@ -50,10 +49,10 @@ I think the best option is to show the work of this script on the example of the
 So the first thing we do is check the root of the tree. If it has the type **None**, return 0.
 
 We can still use this design because our algorithm is recursive.
-
+```python
     if root==None:
         return 0
-
+```
 Ok, our tree's not empty, so let's check the following conditions.
 
     if root.left==None and root.right==None: 
@@ -62,21 +61,21 @@ Ok, our tree's not empty, so let's check the following conditions.
 This condition is looking for a leaf. If our tree had no roots, its depth would be 1.
 
 We check the following conditions. 
-
+```python
      if root.left is None or root.right is None:
             if root.left is None:
                 return self.minDepth(root.left) + 1
             else:
                 return self.minDepth(root.right) + 1
                 
-          
+```          
 As long as our tree does not meet these conditions, we will return to them later.
 
 That leaves the last one.
-
+```python
     else:
         return min(self.minDepth(root.left)+1,self.minDepth(root.right)+1)
-   
+```   
 This is a recursive call to our function. We are looking for the leaves of the tree and their depth.
 
 The left root of our subtree with value 3 is transferred to our function.
@@ -96,13 +95,13 @@ I tried to portray it:
 After checking the left sub-tree, we check the right one. It has a similar algorithm, but it has a node with only one descendant.
 
 The right sub-tree fits this condition:
-
+```python
     if root.left is None or root.right is None:
             if root.left is None:
                 return self.minDepth(root.left) + 1
             else:
                 return self.minDepth(root.right) + 1
-  
+ ``` 
 Then the function will get the root with knowledge of None, and return 0. **And most importantly, we don't need to check the right node.** It saves us time.
 
 It looks like this:
@@ -111,7 +110,8 @@ It looks like this:
 
 
 At the end the function compares the values and returns the smallest from them to the summand 1.
-
+## Input/Output
+![](https://github.com/Francis-Morgan/Minimum-Depth-of-Binary-Tree/blob/master/run_code.PNG)
 ## Test program
 
 ![](https://github.com/chichikow/Minimum-Depth-of-Binary-Tree/blob/master/outputt.PNG)
