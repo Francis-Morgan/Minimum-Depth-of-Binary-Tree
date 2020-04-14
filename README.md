@@ -54,10 +54,10 @@ We can still use this design because our algorithm is recursive.
         return 0
 ```
 Ok, our tree's not empty, so let's check the following conditions.
-
+```python
     if root.left==None and root.right==None: 
         return 1
- 
+ ```
 This condition is looking for a leaf. If our tree had no roots, its depth would be 1.
 
 We check the following conditions. 
